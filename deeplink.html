@@ -8,13 +8,20 @@
 
       var schemeurl = 'LeumiCardCh://?screen=' + getParameterByName('scr') + '&extradata={&quot;dtscatnum&quot;:&quot;' + getParameterByName('app') + '&quot;}';
       var weblink = decodeURIComponent(getParameterByName('web'));
+        
+      var campaign =  decodeURIComponent(getParameterByName('utm_campaign'));
+      var medium =  decodeURIComponent(getParameterByName('utm_medium'));
+      var source =  decodeURIComponent(getParameterByName('utm_source'));
+        
       var now = new Date().valueOf();
 
+      var schemeurlga = schemeurl + "?utm_campaign=" + campaign + "&utm_medium=" + medium+ "&utm_source=" + source;
+        
       setTimeout(function () {
         if (new Date().valueOf() - now > 500) return;
-        window.location.href = weblink;
+        window.location.href = weblink  + "?utm_campaign=" + campaign + "&utm_medium=" + medium+ "&utm_source=" + source;
        }, 100);
-      window.location = schemeurl;
+      window.location = schemeurlga;
       }
     
       function getParameterByName(name) {
