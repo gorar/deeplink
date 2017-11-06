@@ -1,0 +1,39 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<script type="text/javascript">
+
+
+function tryopenscheme() {
+
+var schemeurl = 'LeumiCardCh://?screen=' + getParameterByName('scr') + '&extradata={&quot;dtscatnum&quot;:&quot;' + getParameterByName('app') + '&quot;}';
+var weblink = decodeURIComponent(getParameterByName('web'));
+var now = new Date().valueOf();
+
+setTimeout(function () {
+if (new Date().valueOf() - now > 500) return;
+window.location.href = weblink;
+}, 100);
+window.location = schemeurl;
+}
+
+function getParameterByName(name) {
+name = name.replace(/[\[\]]/g, "\\$&");
+var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+results = regex.exec(window.location.href);
+if (!results) return null;
+if (!results[2]) return '';
+return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+tryopenscheme();</script>
+</head>
+<body>
+<br/><br/>
+<p>
+  בטעינה
+</p>
+</body>
+</html>
