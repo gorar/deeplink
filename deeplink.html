@@ -9,7 +9,7 @@
                      // Get IE or Edge browser version
                      var versionIE = detectIE();
       
-            var schemeurl = 'LeumiCardCh://?screen=' + getParameterByName('scr') + '&extradata={&quot;dtscatnum&quot;:&quot;' + getParameterByName('app') + '&quot;}';
+            var schemeurl = 'leumicardch://?screen=' + getParameterByName('scr') + '&extradata={&quot;dtscatnum&quot;:&quot;' + getParameterByName('app') + '&quot;}';
             var weblink = decodeURIComponent(getParameterByName('web'));
               
             var campaign =  decodeURIComponent(getParameterByName('utm_campaign'));
@@ -18,7 +18,7 @@
               
             var now = new Date().valueOf();
       
-            var schemeurlga = schemeurl + "?utm_source=" + source + "&utm_medium=" + medium+ "&utm_campaign=" + campaign;
+            var schemeurlga = schemeurl + "&utm_source=" + source + "&utm_medium=" + medium+ "&utm_campaign=" + campaign;
               
             setTimeout(function () {
                 if (new Date().valueOf() - now > 900) return;
