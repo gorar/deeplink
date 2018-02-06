@@ -15,6 +15,8 @@
             var campaign =  decodeURIComponent(getParameterByName('utm_campaign'));
             var medium =  decodeURIComponent(getParameterByName('utm_medium'));
             var source =  decodeURIComponent(getParameterByName('utm_source'));
+            var action =  decodeURIComponent(getParameterByName('ActionType'));
+            
               
             var now = new Date().valueOf();
       
@@ -22,7 +24,7 @@
               
             setTimeout(function () {
                 if (new Date().valueOf() - now > 900) return;
-                window.location.href = weblink  + "?utm_source=" + source + "&utm_medium=" + medium+ "&utm_campaign=" + campaign;
+                window.location.href = weblink  + "?utm_source=" + source + "&utm_medium=" + medium + "&utm_campaign=" + campaign + "&ActionType=" + action;
             }, 100);
                     
                      if (versionIE === false) {
